@@ -1,0 +1,34 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### Eclipse ###
+*.classpath
+*.project
+*.settings/
+.springBeans
+.factorypath
+.sts4-cache/
+
+### IntelliJ IDEA ###
+*.iml
+.idea/
+.idea/workspace.xml
+.idea/misc.xml
+.idea/modules.xml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
