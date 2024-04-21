@@ -15,7 +15,7 @@ public class QuestionsController {
         System.out.println("messageTest = " + messageTest);
         System.out.println("The language that you select is " + language);
 
-//        return ResponseEntity.ok().body(messageTest);
-        return null;
+        return ResponseEntity.ok().body(null);
+//      return ResponseEntity.ok().body(message);
     }
 }
