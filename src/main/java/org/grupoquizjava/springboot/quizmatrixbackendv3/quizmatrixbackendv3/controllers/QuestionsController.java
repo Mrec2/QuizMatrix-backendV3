@@ -31,7 +31,6 @@ public class QuestionsController {
         try {
             connection = dataSource.getConnection();
 
-            // Aquí puedes realizar operaciones con la conexión
 
             Map<String, Object> json = new HashMap<>();
             QuestionDaoImp questionDaoImp = new QuestionDaoImp(connection);
@@ -43,13 +42,11 @@ public class QuestionsController {
 
             return ResponseEntity.ok().body(json);
         } finally {
-            // Asegúrate de cerrar la conexión cuando hayas terminado con ella
             if (connection != null) {
                 try {
                     connection.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
-                    // Manejar la excepción de alguna manera adecuada
                 }
             }
         }
