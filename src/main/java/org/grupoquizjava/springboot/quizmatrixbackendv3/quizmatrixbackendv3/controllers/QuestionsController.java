@@ -1,7 +1,7 @@
 package org.grupoquizjava.springboot.quizmatrixbackendv3.quizmatrixbackendv3.controllers;
 
-import org.grupoquizjava.springboot.quizmatrixbackendv3.quizmatrixbackendv3.dao.questiondao.QuestionDaoImp;
 import org.grupoquizjava.springboot.quizmatrixbackendv3.quizmatrixbackendv3.models.QuestionModel;
+import org.grupoquizjava.springboot.quizmatrixbackendv3.quizmatrixbackendv3.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,12 +33,14 @@ public class QuestionsController {
 
 
             Map<String, Object> json = new HashMap<>();
-            QuestionDaoImp questionDaoImp = new QuestionDaoImp(connection);
-            List < QuestionModel> question = questionDaoImp.getNQuestionsByCategory(language, 20);
+            QuestionService questionService = new QuestionService(connection);
+            List < QuestionModel> question = questionService.get20Questions(language, 20);
+            System.out.println("question = " + question);
+            json.put("questions", question);
 
 
-            json.put("prueba", "prueba");
-            json.put("preguntadebasededatos", question);
+//            json.put("test", "test");
+//            json.put("questionfromdatabase", question);
 
             return ResponseEntity.ok().body(json);
         } finally {
