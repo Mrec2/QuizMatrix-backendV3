@@ -1,57 +1,44 @@
 package org.grupoquizjava.springboot.quizmatrixbackendv3.quizmatrixbackendv3.controllers;
 
-import org.grupoquizjava.springboot.quizmatrixbackendv3.quizmatrixbackendv3.models.QuestionModel;
-import org.grupoquizjava.springboot.quizmatrixbackendv3.quizmatrixbackendv3.service.QuestionService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
+
+// THIS IS ONLY A TESTING BETWEEN BACK AND FRONT AND MAKE SOMETHING CSS IN THE FRONTEND. JPA-HIBERNATE IS ALMOST DONE. ONCE HIBERNATE WAS IMPLEMENTED, THIS TEST WILL BE DELETED AND IT WILL WORKING WITH THE NEW FEATURES.
 
 @RestController
 @RequestMapping("/api/questions")
 @CrossOrigin(origins = "*")
-
 public class QuestionsController {
 
-    @Autowired
-    private DataSource dataSource;
-
     @PostMapping("/{language}")
-    public ResponseEntity<Object> getQuestions(@PathVariable String language) throws SQLException {
+    public ResponseEntity<Object> getQuestions(@PathVariable String language) {
         String messageTest = "This is Working nice";
         System.out.println("messageTest = " + messageTest);
         System.out.println("The language that you select is " + language);
 
-        Connection connection = null;
-        try {
-            connection = dataSource.getConnection();
+        // Simulating test
 
+        List<Map<String, Object>> myQuestions = new ArrayList<>();
 
-            Map<String, Object> json = new HashMap<>();
-            QuestionService questionService = new QuestionService(connection);
-            List < QuestionModel> question = questionService.get20Questions(language, 20);
-            System.out.println("question = " + question);
-            json.put("questions", question);
-
-
-//            json.put("test", "test");
-//            json.put("questionfromdatabase", question);
-
-            return ResponseEntity.ok().body(json);
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
+        for (int x = 1; x <= 10; x++) {
+            Map<String, Object> question = createQuestion(x);
+            myQuestions.add(question);
         }
+
+        System.out.println("questions = " + myQuestions);
+
+        return ResponseEntity.ok().body(myQuestions);
+    }
+
+    // Create question, only for test
+    private Map<String, Object> createQuestion(int index) {
+        Map<String, Object> question = new HashMap<>();
+        List<String> bodyOptions = Arrays.asList("Option 1", "Option 2", "Option 3", "Option 4");
+        question.put("bodyOptions", bodyOptions);
+        question.put("question", "Who you are " + index + " ?");
+        return question;
     }
 }
