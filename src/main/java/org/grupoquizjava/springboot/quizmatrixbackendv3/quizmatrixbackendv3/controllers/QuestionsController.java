@@ -23,7 +23,7 @@ public class QuestionsController {
 
         List<Map<String, Object>> myQuestions = new ArrayList<>();
 
-        for (int x = 1; x <= 10; x++) {
+        for (int x = 1; x <= 25; x++) {
             Map<String, Object> question = createQuestion(x);
             myQuestions.add(question);
         }
@@ -36,9 +36,9 @@ public class QuestionsController {
     // Create question, only for test
     private Map<String, Object> createQuestion(int index) {
         Map<String, Object> question = new HashMap<>();
-        List<String> bodyOptions = Arrays.asList("Option 1", "Option 2", "Option 3", "Option 4");
+        List<String> bodyOptions = Arrays.asList("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.", "Lorem ipsum dolor sit amet.");
         question.put("bodyOptions", bodyOptions);
-        question.put("question", "Who you are " + index + " ?");
+        question.put("question", "¿Cómo es la forma correcta de declarar e inicializar una variable en JavaScript, teniendo en cuenta el Scope Local " + index + " ?");
         return question;
     }
 }
