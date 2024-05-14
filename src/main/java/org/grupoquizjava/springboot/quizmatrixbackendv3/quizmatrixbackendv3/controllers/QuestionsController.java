@@ -13,8 +13,7 @@ import java.util.*;
 @CrossOrigin(origins = "*")
 public class QuestionsController {
 
-//    @PostMapping("/{language}")
-    @GetMapping("/{language}")
+    @PostMapping("/{language}")
     public ResponseEntity<Object> getQuestions(@PathVariable String language) {
         String messageTest = "This is Working nice";
         System.out.println("messageTest = " + messageTest);
