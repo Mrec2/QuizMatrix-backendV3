@@ -46,7 +46,7 @@
 // JUAN HAVE TO ADAPT THE CODE USING HIBERNATE. THIS CODE IS AN EXAMPLE THAT CHECKS IF THE API REST CAN COMMUNICATE WITH MYSQL.
 //  - DATABASE HAVE TO USE ENGLISH NOMENCLATURE, ALSO API REST.
 
-package org.grupoquizjava.springboot.quizmatrixbackendv3.quizmatrixbackendv3.dao.questiondao;
+package org.grupoquizjava.springboot.quizmatrixbackendv3.quizmatrixbackendv3.repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

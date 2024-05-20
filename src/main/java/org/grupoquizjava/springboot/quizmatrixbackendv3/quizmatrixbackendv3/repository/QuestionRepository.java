@@ -1,4 +1,4 @@
-package org.grupoquizjava.springboot.quizmatrixbackendv3.quizmatrixbackendv3.dao.questiondao;
+package org.grupoquizjava.springboot.quizmatrixbackendv3.quizmatrixbackendv3.repository;
 
 import org.grupoquizjava.springboot.quizmatrixbackendv3.quizmatrixbackendv3.models.Question;
 

@@ -1,6 +1,6 @@
 package org.grupoquizjava.springboot.quizmatrixbackendv3.quizmatrixbackendv3.service;
 
-import org.grupoquizjava.springboot.quizmatrixbackendv3.quizmatrixbackendv3.dao.questiondao.QuestionRepository;
+import org.grupoquizjava.springboot.quizmatrixbackendv3.quizmatrixbackendv3.repository.QuestionRepository;
 import org.grupoquizjava.springboot.quizmatrixbackendv3.quizmatrixbackendv3.models.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
