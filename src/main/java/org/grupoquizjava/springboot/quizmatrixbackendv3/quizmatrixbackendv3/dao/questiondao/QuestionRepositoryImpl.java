@@ -61,7 +61,7 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class QuestionDaoImp implements IQuestionDao {
+public class QuestionRepositoryImpl implements QuestionRepository {
 
     @PersistenceContext
     private EntityManager em;
