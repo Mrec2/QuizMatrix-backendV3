@@ -13,11 +13,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Entity
 @Table(name = "answers")
@@ -37,14 +33,17 @@ public class Answer implements Serializable{
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
-    @Column(name = "idAnswer", unique=true, nullable=false)
+    @Column(name = "id_answer", unique=true, nullable=false)
 	private Long idAnswer;
 
-	@ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="idQuestion")
+
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="id_question")
+	@ToString.Exclude
     private Question question;
 
-	@Column(name = "bodyAnswer")
+
+	@Column(name = "body_answer")
 	private String bodyAnswer;
 
 	@Column(name = "right")
