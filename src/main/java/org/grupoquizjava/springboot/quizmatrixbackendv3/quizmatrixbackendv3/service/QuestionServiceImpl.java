@@ -14,7 +14,7 @@ import java.util.List;
 public class QuestionServiceImpl implements QuestionService {
 
     @Autowired
-    private QuestionRepository questionDao;
+    private QuestionRepository questionRepository;
 
 /*
     public QuestionService (Connection connection) {
@@ -25,7 +25,7 @@ public class QuestionServiceImpl implements QuestionService {
  */
 
     public List<Question> get20Questions (String category) throws SQLException {
-        return questionDao.getNQuestionsByCategory(category, 20);
+        return questionRepository.getNQuestionsByCategory(category, 20);
     }
 
 }

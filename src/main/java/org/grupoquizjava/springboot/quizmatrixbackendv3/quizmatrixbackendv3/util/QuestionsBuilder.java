@@ -11,16 +11,17 @@ import java.util.*;
 @Component
 public class QuestionsBuilder {
 
-    List<Map<String, Object>> qBuilder ;
+
     List<Question> questions;
 
     public QuestionsBuilder() {
 
-    qBuilder = new ArrayList<>();
+
 
     }
 
     public List<Map<String, Object>> getqBuilder (QuestionService questionService, String language) {
+        List<Map<String, Object>> qBuilder = new ArrayList<>();
 
         System.out.println("questionService = " + questionService);
 
