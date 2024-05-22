@@ -1,4 +1,4 @@
-package org.grupoquizjava.springboot.quizmatrixbackendv3.quizmatrixbackendv3.util;
+package org.grupoquizjava.springboot.quizmatrixbackendv3.quizmatrixbackendv3.config;
 
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.context.annotation.Bean;

@@ -74,6 +74,10 @@ public class QuestionRepositoryImpl implements QuestionRepository {
         query.setParameter("category", questionClass);
         List<Question> results = query.getResultList();
 
+        for(Question q: results){
+            q.setAnswers(q.getAnswers().subList(0,4));
+        }
+
         // Ordenar aleatoriamente los resultados en memoria
         Collections.shuffle(results);
 
