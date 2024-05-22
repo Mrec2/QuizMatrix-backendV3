@@ -20,8 +20,8 @@ public class CheckingServiceImpl implements CheckingService{
 
         System.out.println("answers in checkingservice = " + answers);
         System.out.println("questionsStored in checkingservice= " + questionsStored);
-        siguiente:   for(AnswerUser au : answers){
-                        for(Question q : questionsStored){
+            for(AnswerUser au : answers){
+        siguiente:      for(Question q : questionsStored){
                             for(Answer a: q.getAnswers()){
                                 if(au.getAnswer()!=null && au.getAnswer().equals(a.getBodyAnswer())){
                                     if(a.isRight()){
