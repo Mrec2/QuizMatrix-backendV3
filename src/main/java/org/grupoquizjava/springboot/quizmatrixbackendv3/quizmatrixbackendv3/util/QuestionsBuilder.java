@@ -15,16 +15,10 @@ public class QuestionsBuilder {
     List<Question> questions;
 
     public QuestionsBuilder() {
-
-
-
     }
 
     public List<Map<String, Object>> getqBuilder (QuestionService questionService, String language) {
         List<Map<String, Object>> qBuilder = new ArrayList<>();
-
-//        System.out.println("questionService = " + questionService);
-
 
         try {
             questions = questionService.get20Questions(language);
@@ -33,10 +27,8 @@ public class QuestionsBuilder {
         }
 
         List<Answer> answers = null;
-
         for(Question q : questions) {
 
-//            System.out.println("q = " + q);
             Map<String, Object> question = new HashMap<>();
             question.put("question", q.getBodyQuestion());
             List<String> bodyOptions = new ArrayList<>();
@@ -52,7 +44,6 @@ public class QuestionsBuilder {
     }
 
     public List<Question> getQuestions() {
-//        System.out.println("questions in getQuestions = " + questions);
         return questions;
     }
 
