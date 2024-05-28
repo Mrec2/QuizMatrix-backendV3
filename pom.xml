@@ -68,6 +68,13 @@
         </dependency>
 
 
+        <!-- Usaremos la libreria Argon2 para cifrar contraseñas -->
+        <dependency>
+            <groupId>de.mkammerer</groupId>
+            <artifactId>argon2-jvm</artifactId>
+            <version>2.5</version>
+        </dependency>
+
 
     </dependencies>
 
